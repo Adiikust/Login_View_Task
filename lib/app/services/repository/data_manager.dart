@@ -174,12 +174,14 @@ class DataManager implements DataManagerImp {
     try {
       return await call();
     } on FirebaseException catch (e) {
+      print("third $e");
       final errorMessage =
           FirebaseCurdHelper.instance.getFirestoreErrorMessage(e);
-      CustomSnackBar.error(errorMessage);
+      print("second $errorMessage");
+      CustomToast.error(errorMessage);
       return null;
     } catch (e) {
-      CustomSnackBar.error(e.toString());
+      CustomToast.error(e.toString());
       return null;
     }
   }

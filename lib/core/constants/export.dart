@@ -26,10 +26,17 @@ export 'package:go_router/go_router.dart';
 
 ///-- Services
 ///---- Remote
+export 'package:login_screen_task/app/services/repository/data_manager.dart';
+export 'package:firebase_auth/firebase_auth.dart';
 
 ///---- Repository
 
 ///-- provider
+export 'package:flutter_bloc/flutter_bloc.dart';
+export 'package:login_screen_task/app/view_model/login/login_cubit.dart';
+
+///-- state
+export 'package:login_screen_task/app/view_model/login/login_state.dart';
 
 ///-- Views
 export 'package:login_screen_task/app/view/splash/splash_view.dart';
@@ -60,6 +67,7 @@ export 'package:login_screen_task/core/constants/app_colors.dart';
 export 'package:login_screen_task/core/constants/strings_resource.dart';
 export 'package:login_screen_task/core/extensions/widget_ext.dart';
 export 'package:login_screen_task/core/constants/images_resource.dart';
+export 'package:login_screen_task/core/enums/response_status_enum.dart';
 
 ///-- Enums
 

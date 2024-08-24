@@ -11,7 +11,10 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<LoginCubit>().logout().then((_) =>
+                      context.pushReplacementNamed(RouteNames.loginView));
+                },
                 icon: Icon(
                   size: 40.sp,
                   Icons.logout_outlined,

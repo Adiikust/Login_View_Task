@@ -51,10 +51,10 @@ class FirebaseCurdHelper {
       return await call();
     } on FirebaseException catch (e) {
       final errorMessage = getFirestoreErrorMessage(e);
-      CustomSnackBar.error(errorMessage);
+      CustomToast.error(errorMessage);
       return null; // or handle as needed
     } catch (e) {
-      CustomSnackBar.error(e.toString());
+      CustomToast.error(e.toString());
       return null; // or handle as needed
     }
   }

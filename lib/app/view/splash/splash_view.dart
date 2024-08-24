@@ -52,16 +52,10 @@ class _SplashViewState extends State<SplashView>
 
   void _splashDuration() {
     Future.delayed(const Duration(seconds: 6), () async {
-      context.pushReplacementNamed(RouteNames.loginView);
-
-      // Navigator.of(context).pushReplacement(
-      //   MaterialPageRoute(
-      //       builder: (context) => FirebaseAuth.instance.currentUser?.uid != null
-      //           ? const HomeScreen()
-      //           : prefs.getBool('switchState') == true
-      //           ? const AdminHomeScreen()
-      //           : const WelcomeScreen()),
-      // );
+      context.pushReplacementNamed(
+          FirebaseAuth.instance.currentUser?.uid != null
+              ? RouteNames.homeView
+              : RouteNames.loginView);
     });
   }
 }

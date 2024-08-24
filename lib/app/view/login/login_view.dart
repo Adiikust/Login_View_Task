@@ -46,19 +46,32 @@ class LoginView extends StatelessWidget {
                 validator: (password) => Validation.validatePassword(password),
               ),
               SizeBoxWidget(height: 62.h),
-              ButtonWidget(
-                height: 39.h,
-                width: 184.w,
-                onTap: () {
-                  if (_formKey.currentState!.validate()) {
-                    context.pushReplacementNamed(RouteNames.homeView);
-                  }
+              BlocBuilder<LoginCubit, LoginState>(
+                builder: (context, state) {
+                  return ButtonWidget(
+                    height: 39.h,
+                    width: 184.w,
+                    onTap: () {
+                      if (_formKey.currentState!.validate()) {
+                        final email = _emailController.text.trim();
+                        final password = _passwordController.text.trim();
+                        context.read<LoginCubit>().login(email, password).then(
+                          (user) {
+                            if (user?.uid != null) {
+                              context.pushReplacementNamed(RouteNames.homeView);
+                            }
+                          },
+                        );
+                      }
+                    },
+                    isLoading: state.isLoading,
+                    radius: 18,
+                    title: StringsResource.appName,
+                    color: AppColors.whiteColor,
+                    textColor: AppColors.blackColor,
+                  ).center();
                 },
-                radius: 18,
-                title: StringsResource.appName,
-                color: AppColors.whiteColor,
-                textColor: AppColors.blackColor,
-              ).center()
+              ),
             ],
           ).defaultPadding(horizontal: 40.w, vertical: 0),
         ),

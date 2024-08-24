@@ -38,8 +38,9 @@ dependencies:
   size_adapter: ^0.0.1
   google_fonts: ^6.1.0
   go_router: ^14.0.1
-  get: ^4.6.5
-  http:
+#  get: ^4.6.5
+  fluttertoast: ^8.1.1
+  flutter_bloc: ^8.1.1
 
   # Firebase Packages
   firebase_core: ^2.25.4

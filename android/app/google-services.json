@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "966381466414",
+    "project_id": "logintask-bdf14",
+    "storage_bucket": "logintask-bdf14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966381466414:android:90922429af4af1898e00bf",
+        "android_client_info": {
+          "package_name": "com.example.yourapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6-iI15j3-GkywO7OUCdOvCXNctK3NWZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
